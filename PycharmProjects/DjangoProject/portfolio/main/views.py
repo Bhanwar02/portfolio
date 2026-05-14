@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+from portfolio import settings
 from .models import Contact
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -28,7 +30,7 @@ Email: {email}
 Message:
 {message}
                 """,
-                from_email='kaurbhanwarpreet@gmail.com',
+                from_email=settings.EMAIL_HOST_USER,
                 recipient_list=['kaurbhanwarpreet@gmail.com'],
                 fail_silently=False,
             )
