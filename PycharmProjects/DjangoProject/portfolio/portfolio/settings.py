@@ -32,6 +32,9 @@ ALLOWED_HOSTS = [
 ]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://portfolio-fug0.onrender.com",
+]
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 # Application definition
@@ -136,9 +139,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://portfolio-fug0.onrender.com/",
-]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
