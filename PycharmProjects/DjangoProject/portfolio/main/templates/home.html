@@ -461,13 +461,13 @@
                 or backend development opportunities.
             </p>
 
-        {% if messages %}
-  {% for message in messages %}
-    <p style="color: green;">
-      {{ message }}
-    </p>
-  {% endfor %}
-{% endif %}
+       {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
 
             <form method="POST">
 

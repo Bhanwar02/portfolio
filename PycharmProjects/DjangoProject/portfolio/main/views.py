@@ -30,7 +30,7 @@ Email: {email}
 Message:
 {message}
                 """,
-                from_email=settings.EMAIL_HOST_USER,
+                from_email='kaurbhanwarpreet@gmail.com',
                 recipient_list=['kaurbhanwarpreet@gmail.com'],
                 fail_silently=True,
             )
