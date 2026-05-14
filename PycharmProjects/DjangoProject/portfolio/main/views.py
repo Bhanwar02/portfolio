@@ -32,7 +32,7 @@ Message:
                 """,
                 from_email=settings.EMAIL_HOST_USER,
                 recipient_list=['kaurbhanwarpreet@gmail.com'],
-                fail_silently=False,
+                fail_silently=True,
             )
 
             messages.success(request, "Message sent successfully!")
