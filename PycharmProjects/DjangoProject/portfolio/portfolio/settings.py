@@ -27,9 +27,15 @@ SECRET_KEY = 'django-insecure-g@was_16mu#c4#4kwi_bd7+f!gjg1_9d4qkn#f&xsfz)4)#*73
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "portfolio-fug0.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -130,6 +136,11 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://portfolio-fug0.onrender.com/",
+]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
