@@ -1,0 +1,532 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="hero">
+
+    <div class="hero-left">
+        <div class="hello">hi there 👋</div>
+
+        <div class="main-text">
+            I’m <span style="color:#a855f7;">Bhanwarpreet Kaur</span>,
+            building backend systems that power modern web applications
+        </div>
+
+        <p style="color:#aaa; margin-top:10px;">
+            Focused on Django, APIs, and scalable systems.
+        </p>
+
+        <br>
+
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="../../static/resume/BhanwarpreetKaur-Resume.pdf" class="btn btn-secondary">Download Resume</a>
+
+    </div>
+
+    <div class="hero-right">
+        <p>
+            I am a Computer Science graduate with hands-on experience in backend and full-stack development.
+            I have built real-world applications including a healthcare consultation system and REST APIs using Django.
+        </p>
+
+        <br>
+
+        <p>
+            Currently focused on improving backend performance, database design, and building production-ready systems.
+        </p>
+    </div>
+
+</div>
+
+    <div class="section about-section" id="about">
+
+    <h2 class="about-title">About Me</h2>
+
+    <div class="about-container">
+
+        <!-- LEFT SIDE -->
+        <div class="about-left">
+            <h3>My approach to work</h3>
+            <p class="italic-text">
+                consistency, problem-solving, and continuous learning
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="about-right">
+            <p>
+                I’m Bhanwarpreet Kaur, a Computer Science graduate with a strong focus on backend development.
+                I have experience building web applications using Django and REST APIs, including healthcare and e-commerce systems.
+            </p>
+
+            <p>
+                I enjoy solving real-world problems, designing efficient database systems, and building scalable backend architectures.
+                Currently, I’m looking for opportunities to grow as a backend developer and contribute to impactful projects.
+            </p>
+
+            <!-- SOCIAL LINKS -->
+            <div class="social-icons">
+                <a href="https://github.com/Bhanwar02">GitHub</a>
+                <a href="https://linkedin.com">LinkedIn</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="section skills-section" id="skills">
+
+    <h2 class="skills-title">My Skills</h2>
+
+    <div class="skills-container">
+
+        <!-- LEFT -->
+        <div class="skills-left">
+            <h3>I build backend systems</h3>
+            <p class="italic-text">I can Design, Develop, Deploy</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="skills-right">
+            <p>
+                I work primarily with Python and Django to build scalable backend systems and REST APIs.
+                I focus on writing clean, maintainable code and designing efficient database structures.
+            </p>
+
+            <p>
+                I also have experience with frontend basics and enjoy building complete full-stack applications.
+            </p>
+
+            <!-- CATEGORY BUTTONS -->
+            <div class="skill-tags">
+                <span>Backend</span>
+                <span>Frontend</span>
+                <span>Databases</span>
+                <span>Tools</span>
+            </div>
+
+            <!-- SKILL GRID -->
+            <div class="skills-grid">
+
+    <div><i class="fab fa-python"></i> Python</div>
+    <div><i class="fas fa-leaf"></i> Django</div>
+    <div><i class="fas fa-plug"></i> REST APIs</div>
+
+    <div><i class="fab fa-js"></i> JavaScript</div>
+    <div><i class="fab fa-html5"></i> HTML</div>
+    <div><i class="fab fa-css3-alt"></i> CSS</div>
+
+    <div><i class="fas fa-database"></i> MySQL</div>
+    <div><i class="fas fa-database"></i> PostgreSQL</div>
+
+    <div><i class="fab fa-github"></i> GitHub</div>
+    <div><i class="fab fa-docker"></i> Docker</div>
+
+    <div><i class="fas fa-terminal"></i> Linux CLI</div>
+    <div><i class="fas fa-code-branch"></i> CI/CD</div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PROJECTS SECTION -->
+<!-- ========================= -->
+
+<section class="projects-section" id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <!-- ========================= -->
+    <!-- PROJECT 1 -->
+    <!-- ========================= -->
+
+    <div class="project-card">
+
+        <!-- PROJECT IMAGE -->
+        <div class="project-image">
+{#            <img src="{% static 'images/doclink.png' %}" alt="DocLink Project">#}
+        </div>
+
+        <!-- PROJECT CONTENT -->
+        <div class="project-content">
+
+            <!-- LEFT SIDE -->
+            <div class="project-info">
+
+                <h3>DocLink</h3>
+
+                <div class="project-stats">
+                    <p>Healthcare Platform</p>
+                    <p>REST API Architecture</p>
+                    <p>Secure Authentication</p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="project-description">
+
+                <!-- BUTTONS -->
+                <div class="project-buttons">
+
+                    <a href="https://github.com/Bhanwar02"
+                       target="_blank"
+                       class="code-btn">
+                        GitHub
+                    </a>
+
+                </div>
+
+                <!-- DESCRIPTION -->
+                <p>
+                    Engineered a full-stack healthcare consultation platform that connects
+                    patients with doctors through secure virtual appointments and real-time
+                    healthcare management features.
+
+                    Designed scalable RESTful APIs for appointment scheduling, patient records,
+                    seminar notifications, and user management while implementing structured
+                    database models for efficient data handling and system scalability.
+                </p>
+
+                <!-- TECH STACK -->
+                <div class="tech-stack">
+
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>Django REST Framework</span>
+                    <span>PostgreSQL</span>
+                    <span>JWT Auth</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- PROJECT 2 -->
+    <!-- ========================= -->
+
+    <div class="project-card">
+
+        <div class="project-image">
+{#            <img src="{% static 'images/airline.png' %}" alt="Airline Project">#}
+        </div>
+
+        <div class="project-content">
+
+            <div class="project-info">
+
+                <h3>Airline Ticket Booking System</h3>
+
+                <div class="project-stats">
+                    <p>Desktop Application</p>
+                    <p>Role-Based Access</p>
+                    <p>Booking Management</p>
+                </div>
+
+            </div>
+
+            <div class="project-description">
+
+                <div class="project-buttons">
+
+                    <a href="https://github.com/Bhanwar02/Airline-Ticket-Booking-System"
+                       target="_blank"
+                       class="code-btn">
+                        GitHub
+                    </a>
+
+                </div>
+
+                <p>
+                    Developed a desktop-based airline reservation system using Python and Tkinter,
+                    enabling users to search flights, manage bookings, and monitor seat availability
+                    through an interactive graphical interface.
+
+                    Implemented secure authentication for user and admin modules while integrating
+                    ticket pricing, scheduling systems, and structured booking workflows.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+                    <span>Tkinter</span>
+                    <span>GUI Development</span>
+                    <span>Authentication</span>
+                    <span>Data Handling</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- PROJECT 3 -->
+    <!-- ========================= -->
+
+    <div class="project-card">
+
+        <div class="project-image">
+{#            <img src="{% static 'images/ecommerce.png' %}" alt="Ecommerce Backend">#}
+
+        </div>
+
+        <div class="project-content">
+
+            <div class="project-info">
+
+                <h3>E-Commerce Backend System</h3>
+
+                <div class="project-stats">
+                    <p>Backend Engineering</p>
+                    <p>REST API Development</p>
+                    <p>JWT Security</p>
+                </div>
+
+            </div>
+
+            <div class="project-description">
+
+                <div class="project-buttons">
+
+                </div>
+
+                <p>
+                    Building a scalable e-commerce backend system using Django REST Framework,
+                    focused on high-performance API development and secure user authentication.
+
+                    Implemented product management, cart operations, order processing,
+                    and optimized PostgreSQL database models for scalable backend architecture.
+                </p>
+
+                <div class="tech-stack">
+
+                    <span>Python</span>
+                    <span>Django REST Framework</span>
+                    <span>PostgreSQL</span>
+                    <span>JWT Authentication</span>
+                    <span>REST APIs</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <div class="section experience-section" id="experience">
+
+    <h2 class="experience-title">Experience & Leadership</h2>
+
+    <!-- EXPERIENCE ITEM -->
+    <div class="experience-item">
+
+        <!-- LEFT -->
+        <div class="experience-left">
+            <h3>Co-Founder & Social Media Manager</h3>
+
+           <div class="company-row">
+    <p class="company-name">Breezified</p>
+
+    <a href="https://breezified.com/"
+       target="_blank"
+       class="visit-link">
+        Visit Website ↗
+    </a>
+</div>
+
+            <div class="timeline">
+                <span></span>
+                <p>2024 — Present</p>
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="experience-right">
+
+            <p>
+                Managed social media presence and branding strategies for the business,
+                helping improve audience engagement and online visibility.
+            </p>
+
+            <p>
+                Collaborated with the development and marketing team to support
+                website growth, promotional campaigns, and customer outreach.
+            </p>
+
+            <p>
+                Contributed to business planning, communication, and digital content
+                management while working in a startup environment.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="experience-item">
+
+    <!-- LEFT -->
+    <div class="experience-left">
+
+        <h3>Full Stack Developer Intern</h3>
+
+        <p class="company-name">
+            GTB Computer Education, Jalandhar, India
+        </p>
+
+        <div class="timeline">
+            <span></span>
+            <p>May 2023 — September 2023</p>
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="experience-right">
+
+        <p>
+            Contributed to the development of web applications using modern
+            frontend and backend technologies.
+        </p>
+
+        <p>
+            Assisted in building and testing application features, APIs,
+            and backend functionalities to improve system performance.
+        </p>
+
+        <p>
+            Debugged application issues and collaborated with team members
+            using Git-based workflows and version control practices.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+    <div class="section contact-section" id="contact">
+
+    <div class="contact-container">
+
+        <!-- LEFT SIDE -->
+        <div class="contact-left">
+
+            <h2 class="contact-heading">
+                Let's Build <br>
+                Something <br>
+                Great Together
+            </h2>
+
+            <p class="contact-email">
+                kaurbhanwarpreet@gmail.com
+            </p>
+
+            <div class="contact-socials">
+                <a href="https://github.com/Bhanwar02">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+
+                <a href="https://linkedin.com">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="contact-right">
+
+            <p class="contact-text">
+                Feel free to connect with me for internships, collaborations,
+                or backend development opportunities.
+            </p>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="input-row">
+
+                    <div>
+                        <label>Your Name</label>
+                        <input type="text" name="name" placeholder="John Doe">
+
+                        <label>Your Email</label>
+                        <input type="email" name="email" placeholder="john@email.com">
+                    </div>
+
+                </div>
+
+                <div>
+                    <label>Your Message</label>
+                    <textarea name="message" rows="7" placeholder="Write your message..."></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- LEFT -->
+        <div class="footer-left">
+
+            <div class="footer-box">
+                <h4>Crafted By</h4>
+                <p>Bhanwarpreet Kaur</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>Built Using</h4>
+                <p>Django, Python, HTML, CSS & JavaScript</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-right">
+
+            <div class="hosting-box">
+                Proudly Hosted on Render
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">
+        © 2026 Bhanwarpreet Kaur. All rights reserved.
+    </p>
+
+</footer>
+{% endblock %}
