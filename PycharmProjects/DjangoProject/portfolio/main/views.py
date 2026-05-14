@@ -10,37 +10,34 @@ def home(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        Contact.objects.create(
-            name=name,
-            email=email,
-            message=message
-        )
         try:
+            # Save to database
+            Contact.objects.create(
+                name=name,
+                email=email,
+                message=message
+            )
+
+            # Send email
             send_mail(
                 subject=f"New Portfolio Message from {name}",
-
                 message=f"""
-            Name: {name}
-    
-            Email: {email}
-    
-            Message:
-            {message}
-                        """,
+Name: {name}
+Email: {email}
 
+Message:
+{message}
+                """,
                 from_email='kaurbhanwarpreet@gmail.com',
-
                 recipient_list=['kaurbhanwarpreet@gmail.com'],
-
-                fail_silently=True,
+                fail_silently=False,
             )
 
             messages.success(request, "Message sent successfully!")
-
             return redirect('/')
 
         except Exception as e:
-            print(e)
+            print("ERROR:", e)
             messages.error(request, "Failed to send message.")
             return redirect('/')
 
