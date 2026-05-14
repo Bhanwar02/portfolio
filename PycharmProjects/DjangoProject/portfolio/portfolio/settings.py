@@ -28,9 +28,7 @@ SECRET_KEY = 'django-insecure-g@was_16mu#c4#4kwi_bd7+f!gjg1_9d4qkn#f&xsfz)4)#*73
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "portfolio-fug0.onrender.com",
-    "localhost",
-    "127.0.0.1"
+    "portfolio-fug0.onrender.com"
 ]
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
