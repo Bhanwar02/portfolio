@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Contact
+from django.contrib import messages
 from django.core.mail import send_mail
 
 def home(request):
@@ -14,26 +15,33 @@ def home(request):
             email=email,
             message=message
         )
+        try:
+            send_mail(
+                subject=f"New Portfolio Message from {name}",
 
-        send_mail(
-            subject=f"New Portfolio Message from {name}",
+                message=f"""
+            Name: {name}
+    
+            Email: {email}
+    
+            Message:
+            {message}
+                        """,
 
-            message=f"""
-        Name: {name}
+                from_email='kaurbhanwarpreet@gmail.com',
 
-        Email: {email}
+                recipient_list=['kaurbhanwarpreet@gmail.com'],
 
-        Message:
-        {message}
-                    """,
+                fail_silently=False,
+            )
 
-            from_email='kaurbhanwarpreet@gmail.com',
+            messages.success(request, "Message sent successfully!")
 
-            recipient_list=['kaurbhanwarpreet@gmail.com'],
+            return redirect('/')
 
-            fail_silently=False,
-        )
-
-        return redirect('/')
+        except Exception as e:
+            print(e)
+            messages.error(request, "Failed to send message.")
+            return redirect('/')
 
     return render(request, 'home.html')
