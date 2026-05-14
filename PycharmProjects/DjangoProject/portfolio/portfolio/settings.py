@@ -130,7 +130,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 
-ALLOWED_HOSTS = ["your-app.onrender.com", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["portfolio-fug0.onrender.com", "127.0.0.1", "localhost"]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
