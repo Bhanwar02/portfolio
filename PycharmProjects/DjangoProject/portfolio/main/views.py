@@ -35,12 +35,13 @@ Message:
                 fail_silently=True,
             )
 
-            messages.success(request, "Message sent successfully!")
+
             return redirect('/')
+
 
         except Exception as e:
             print("ERROR:", e)
             messages.error(request, "Failed to send message.")
             return redirect('/')
-
+    messages.success(request, "Message sent successfully!")
     return render(request, 'home.html')
