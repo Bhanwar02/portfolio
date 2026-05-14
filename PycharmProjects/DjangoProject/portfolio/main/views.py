@@ -32,7 +32,7 @@ def home(request):
 
                 recipient_list=['kaurbhanwarpreet@gmail.com'],
 
-                fail_silently=False,
+                fail_silently=True,
             )
 
             messages.success(request, "Message sent successfully!")
