@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.conf import settings
+
 
 def home(request):
 
@@ -11,14 +13,15 @@ def home(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
-        # Save in database
-
         try:
+            # Save to database
             Contact.objects.create(
                 name=name,
                 email=email,
                 message=message
             )
+
+            # Send email
             send_mail(
                 subject=f"New Portfolio Message from {name}",
 
@@ -30,7 +33,7 @@ Message:
 {message}
                 """,
 
-                from_email="kaurbhanwarpreet@gmail.com",
+                from_email=settings.EMAIL_HOST_USER,
 
                 recipient_list=["kaurbhanwarpreet@gmail.com"],
 
