@@ -462,12 +462,12 @@
             </p>
 
        {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
+    {% for message in messages %}
+        <div class="success-message">
             {{ message }}
-            </div>
-        {% endfor %}
-        {% endif %}
+        </div>
+    {% endfor %}
+{% endif %}
 
             <form method="POST">
 
@@ -477,17 +477,17 @@
 
                     <div>
                         <label>Your Name</label>
-                        <input type="text" name="name" placeholder="John Doe">
+                        <input type="text" name="name" placeholder="Your name" required>
 
                         <label>Your Email</label>
-                        <input type="email" name="email" placeholder="john@email.com">
+                        <input type="email" name="email" placeholder="youremail@email.com" required>
                     </div>
 
                 </div>
 
                 <div>
                     <label>Your Message</label>
-                    <textarea name="message" rows="7" placeholder="Write your message..."></textarea>
+                    <textarea name="message" rows="7" placeholder="Write your message..." required></textarea>
                 </div>
 
                 <button type="submit" class="send-btn">

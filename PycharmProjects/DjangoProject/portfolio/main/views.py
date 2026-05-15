@@ -12,13 +12,13 @@ def home(request):
         message = request.POST.get("message")
 
         # Save in database
-        Contact.objects.create(
-            name=name,
-            email=email,
-            message=message
-        )
 
         try:
+            Contact.objects.create(
+                name=name,
+                email=email,
+                message=message
+            )
             send_mail(
                 subject=f"New Portfolio Message from {name}",
 

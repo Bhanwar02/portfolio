@@ -14,7 +14,7 @@ from pathlib import Path
 from decouple import config
 import os
 import smtplib
-smtplib.SMTP.timeout = 10
+smtplib.SMTP.timeout = 3
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -156,4 +156,4 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-EMAIL_TIMEOUT = 10
+EMAIL_TIMEOUT = 3
