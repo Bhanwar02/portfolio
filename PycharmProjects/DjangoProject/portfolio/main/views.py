@@ -44,12 +44,7 @@ Message:
 
         except Exception as e:
 
-            print("EMAIL ERROR:", e)
-
-            messages.warning(
-                request,
-                "Message saved successfully, but email notification failed."
-            )
+            messages.error(request, f"EMAIL ERROR: {e}")
 
         return redirect("/")
 
