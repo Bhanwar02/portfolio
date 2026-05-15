@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
-from django.core.mail import send_mail
+import resend
 from django.conf import settings
 
 
@@ -14,31 +14,34 @@ def home(request):
         message = request.POST.get("message")
 
         try:
-            # Save to database
+            # Save message in database
             Contact.objects.create(
                 name=name,
                 email=email,
                 message=message
             )
 
-            # Send email
-            send_mail(
-                subject=f"New Portfolio Message from {name}",
+            # Resend API key
+            resend.api_key = settings.RESEND_API_KEY
 
-                message=f"""
-Name: {name}
-Email: {email}
+            # Send email notification
+            resend.Emails.send({
+                "from": "onboarding@resend.dev",
+                "to": "kaurbhanwarpreet@gmail.com",
+                "subject": f"New Portfolio Message from {name}",
 
-Message:
-{message}
-                """,
+                "html": f"""
+                    <h2>New Portfolio Contact</h2>
 
-                from_email=settings.EMAIL_HOST_USER,
+                    <p><strong>Name:</strong> {name}</p>
 
-                recipient_list=["kaurbhanwarpreet@gmail.com"],
+                    <p><strong>Email:</strong> {email}</p>
 
-                fail_silently=False,
-            )
+                    <p><strong>Message:</strong></p>
+
+                    <p>{message}</p>
+                """
+            })
 
             messages.success(request, "Message sent successfully!")
 
