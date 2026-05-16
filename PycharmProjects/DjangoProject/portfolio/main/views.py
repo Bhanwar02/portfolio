@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib import messages
-import resend
+from django.core.mail import send_mail
 from django.conf import settings
 
 
@@ -13,6 +13,11 @@ def home(request):
         email = request.POST.get("email")
         message = request.POST.get("message")
 
+        # Validation
+        if not name or not email or not message:
+            messages.error(request, "Please fill all required fields.")
+            return redirect("/")
+
         try:
             # Save message in database
             Contact.objects.create(
@@ -21,33 +26,38 @@ def home(request):
                 message=message
             )
 
-            # Resend API key
-            resend.api_key = settings.RESEND_API_KEY
-
             # Send email notification
-            resend.Emails.send({
-                "from": "onboarding@resend.dev",
-                "to": "kaurbhanwarpreet@gmail.com",
-                "subject": f"New Portfolio Message from {name}",
+            send_mail(
+                subject=f"New Portfolio Message from {name}",
 
-                "html": f"""
-                    <h2>New Portfolio Contact</h2>
+                message=f"""
+New portfolio contact message
 
-                    <p><strong>Name:</strong> {name}</p>
+Name: {name}
+Email: {email}
 
-                    <p><strong>Email:</strong> {email}</p>
+Message:
+{message}
+                """,
 
-                    <p><strong>Message:</strong></p>
+                from_email=settings.EMAIL_HOST_USER,
 
-                    <p>{message}</p>
-                """
-            })
+                recipient_list=["kaurbhanwarpreet@gmail.com"],
 
-            messages.success(request, "Message sent successfully!")
+                fail_silently=True,
+            )
 
-        except Exception as e:
+            messages.success(
+                request,
+                "Message sent successfully!"
+            )
 
-            messages.error(request, f"EMAIL ERROR: {e}")
+        except Exception:
+
+            messages.error(
+                request,
+                "Something went wrong. Please try again later."
+            )
 
         return redirect("/")
 
