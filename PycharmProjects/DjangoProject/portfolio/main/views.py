@@ -57,7 +57,7 @@ Message:
 
             print("FULL EMAIL ERROR:", str(e))
 
-            messages.error(request, f"{str(e)}")ss
+            messages.error(request, f"{str(e)}")
 
         return redirect("/")
 
