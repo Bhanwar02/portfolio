@@ -44,20 +44,20 @@ Message:
 
                 recipient_list=["kaurbhanwarpreet@gmail.com"],
 
-                fail_silently=True,
+                fail_silently=False,
             )
-
+            print("EMAIL SENT SUCCESSFULLY")
             messages.success(
                 request,
                 "Message sent successfully!"
             )
 
-        except Exception:
 
-            messages.error(
-                request,
-                "Something went wrong. Please try again later."
-            )
+        except Exception as e:
+
+            print("FULL EMAIL ERROR:", str(e))
+
+            messages.error(request, f"{str(e)}")ss
 
         return redirect("/")
 
